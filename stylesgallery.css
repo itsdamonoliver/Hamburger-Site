@@ -1,0 +1,184 @@
+/* ======= ======= ======= general ======= ======= ======= */
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url("img/white.jpg");
+    background-size: auto;
+    background-position: bottom;
+    background-color: #eeeeee;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #eeeeee;
+  color: #2da8e0;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+/* ======= ======= ======= menu (DO NOT TOUCH) ======= ======= ======= */
+/* ======= ======= ======= styles  ======= ======= ======= */
+
+#logo {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  margin: 350px auto 10px 10px;
+  background-image: url("img/weblogo.png");
+  background-size: contain;
+  background-position: center;
+}
+#url {
+  height: 350px;
+  width: 75px;
+  margin: 525px 0px 10px 50px;
+  background-image: url("img/url.png");
+  background-size: contain;
+  background-position: center;
+}
+#bar {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  margin: 0;
+  float: left;
+  background-color: #808080;
+  /*z-index: 1;*/
+}
+#content {
+  position: fixed;
+  left: 100px;
+  top: 0px;
+  height: 100%;
+  width: 90%;
+  margin 0;
+  float: right;
+  background-color: #eeeeee;
+}
+/* ======= ======= ======= menu (DO NOT TOUCH) ======= ======= ======= */
+
+a
+{
+  text-decoration: none;
+  color: #eeeeee;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+a:hover
+{
+  color: #808080;
+}
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 35px;
+  left: 35px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #2da8e0;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+/*Transform all the slices of hamburger into a crossmark.*/
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #808080;
+}
+/*hide the middle one.*/
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+/*last one goes the other direction*/
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #2da8e0;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+ /*fade from the left*/
+#menuToggle input:checked ~ ul
+{
+  transform: scale(1.0, 1.0);
+  opacity: 1;
+}
+
+/* ======= ======= ======= menu (DO NOT TOUCH) ======= ======= ======= */
+/* ======= ======= ======= positioning  ======= ======= ======= */
+/*#main-menu {
+
+}
+.menu-item {
+
+}
+.menu-item > p {
+
+}
+#mini-menu {
+
+}
+*/
